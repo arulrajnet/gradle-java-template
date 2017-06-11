@@ -1,0 +1,20 @@
+buildscript {
+  repositories.maven { url 'https://plugins.gradle.org/m2/' }
+  dependencies.classpath 'gradle.plugin.nl.javadude.gradle.plugins:license-gradle-plugin:0.13.1'
+}
+
+apply plugin: nl.javadude.gradle.plugins.license.LicensePlugin
+
+license {
+    include "**/*.java"
+    header rootProject.file('gradle/license.template')
+    strictCheck true
+    skipExistingHeaders false
+    ext {
+      copyright_range = Calendar.getInstance().get(Calendar.YEAR)
+      name = "Arulraj Venni"
+    }
+    mapping {
+      java = 'DOUBLESLASH_STYLE'
+    }
+}
