@@ -27,6 +27,12 @@ repositories {
     mavenLocal()
 }
 
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+
 dependencies {
     testCompile group: 'org.testng', name:'testng', version:'6.8.17'
 }
